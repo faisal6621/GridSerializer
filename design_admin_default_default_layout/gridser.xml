@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <gridser_adminhtml_gridser_products>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="gridser/adminhtml_gridser_edit_tab_products" name="gridser.edit.tab.products"/>
+            <block type="adminhtml/widget_grid_serializer" name="products_grid_serializer">
+                <reference name="products_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>gridser.edit.tab.products</grid_block_name>
+                        <data_callback>getSelectedProducts</data_callback>
+                        <hidden_input_name>links[products]</hidden_input_name>
+                        <reload_param_name>products</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </gridser_adminhtml_gridser_products>
+
+    <gridser_adminhtml_gridser_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="gridser/adminhtml_gridser_edit_tab_products" name="gridser.edit.tab.products"/>
+        </block>
+    </gridser_adminhtml_gridser_productsgrid>
+</layout>
